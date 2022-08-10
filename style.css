@@ -10,7 +10,7 @@
 }
 
 /* The Modal (background) */
-#divModal {
+.divModal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -19,8 +19,8 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     /* Enable scroll if needed */
+    overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -98,3 +98,32 @@
         width: 100%;
     }
 }
+
+@-webkit-keyframes closed {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(0)
+    }
+}
+
+@keyframes closed {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(0)
+    }
+}
+
+.closeClass {
+    background-color: none;
+    display: none;
+}
+/* .closeClass > .divModal, .close__button, .image_modal, #botomtext {
+    display: none;
+    z-index: 0;
+} */
