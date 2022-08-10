@@ -1,3 +1,4 @@
+// let it = document.querySelector('.image_modal');
 //Get the modal
 let modal = document.querySelector('.divModal');
 
@@ -6,21 +7,28 @@ let img = document.querySelector('.image');
 let modalImg = document.querySelector('.image_modal');
 let captionText = document.getElementById("botomtext");
 
-modal.classList.remove('divModal');
+captionText.style.display = 'none';
 img.onclick = function () {
-    modal.classList.add('divModal');
+    modal.classList.remove('modalClose');
     modal.style.display = "block";
     modalImg.src = this.src;
-    modalImg.alt = this.alt;
+    // modalImg.alt = this.alt;
     captionText.style.display = "block";
+    img.style.display = 'none';
 }
 
 let span = document.getElementsByClassName("close__button")[0];
 
-//click on (x), close the modal
 span.onclick = function () {
-    modal.style.display = "none";
-    // modal.classList.add('closeClass');
-    // modal.classList.remove('divModal');
-    // document.querySelector('.divModal').style.display = 'none';
+    modal.classList.add('modalClose');
+    img.style.display = 'block';
+}
+
+window.onclick = function (event) {
+    console.log('=====', event);
+    if (event.target == modal) {
+        console.log('=1=1=1=', event.target);
+        modal.classList.add('modalClose');
+        img.style.display = 'block';
+    }
 }
